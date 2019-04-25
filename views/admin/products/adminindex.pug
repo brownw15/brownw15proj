@@ -1,0 +1,14 @@
+extends ../../layout/layout.pug
+
+block content
+  h1 Welcome to the Product Page
+  ul
+  each product in products
+    li
+      a(href="/admin/products/"+ product.id) #{product.itemName}  #{product.itemDesc} #{product.itemImg}   $$<span class="prices>"#{product.itemPrc}</span>
+  br
+  a(href="/admin/products/new")
+    form(METHOD="POST")
+    input(type="hidden")
+    button(type="SUBMIT") Add new item!
+  

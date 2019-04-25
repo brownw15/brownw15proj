@@ -1,0 +1,23 @@
+extends ../../layout/layout.pug
+
+block content
+  h1 Product Detail
+    h2 #{product.itemName}
+    ul
+      li Description: #{product.itemDesc}
+      li #{product.itemImg}
+      li Price: $#{product.itemPrc}
+
+  form(action="/admin/products/delete" METHOD="POST")
+    input(type="hidden" name="id" value=product.id)
+    button(type="SUBMIT") Delete an item
+    br   
+    form(action="" METHOD="POST")
+      input(type="hidden" name="edit" value=product.id)
+      button(type="SUBMIT") 
+        a(href="/admin/products/edit/"+ product.id) Edit Product
+      br     
+    form(action="" METHOD="POST")
+      input(type="hidden" name="home")
+      button(type="SUBMIT")   
+        a(href="/") Back to list

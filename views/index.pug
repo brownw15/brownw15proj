@@ -1,0 +1,8 @@
+extends layout/layout.pug
+
+block content
+  h1 Welcome to the Product Page
+  ul
+  each product in products 
+    li 
+      a(href="/admin/products/"+ product.id) #{product.itemName}  #{product.itemDesc} #{product.itemImg}   <span class="prices">$$#{product.itemPrc}</span>

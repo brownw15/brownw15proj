@@ -1,0 +1,30 @@
+h1 {
+  color:darkorange;
+  font-size: 3em;
+}
+h2 {
+  font-size:2.5em;
+  color:blue;
+}
+a{
+  color: darkblue;
+  text-decoration: none;
+  font-size: 2em;
+}
+ul,li{
+  list-style: none;
+  color:darkred;
+}
+li{
+  border: 1px dotted grey;
+  font-size: 1.4em;
+}
+.prices{
+  color:darkgreen;
+}
+button{
+  border-color:blue;
+  border-radius: 5px;
+  border-style: solid;
+  background: lightgreen;
+}
