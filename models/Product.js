@@ -17,7 +17,7 @@ const Product = sequelize.define('product', {
     allowNull: false
   },
 	itemImg : {
-		type: Sequelize.BLOB,
+		type: Sequelize.STRING,
 		allowNull: true
 	},
 	itemPrc : {

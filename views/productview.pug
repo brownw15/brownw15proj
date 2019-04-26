@@ -1,0 +1,15 @@
+extends layout/layout.pug
+
+block content
+  h1 Product Detail
+  div(class="container")
+    h2 #{product.itemName}
+    ul
+      li Description: #{product.itemDesc}
+      li 
+        img(src= "../../" + product.itemImg)
+      li Price: $#{product.itemPrc}
+    form(action="" METHOD="POST")
+      input(type="hidden" name="home")
+      button(type="SUBMIT")   
+        a(href="/") Back to list

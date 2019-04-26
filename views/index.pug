@@ -1,8 +1,24 @@
 extends layout/layout.pug
 
 block content
-  h1 Welcome to the Product Page
+  h1 Welcome to FixaPhone Home!
+  h3 Put in an order today and avoid overpaying and overwaiting!
   ul
-  each product in products 
-    li 
-      a(href="/admin/products/"+ product.id) #{product.itemName}  #{product.itemDesc} #{product.itemImg}   <span class="prices">$$#{product.itemPrc}</span>
+  div(class="wrapper")
+    each product in products
+      div(class="container")
+        li
+          a(href= product.id) #{product.itemName}
+        li 
+          #{product.itemDesc}
+        li
+          span(class="images") 
+            img(src="../../" + product.itemImg)
+        li  
+          <span class="prices"> $$#{product.itemPrc}
+          
+        form(action=product.id METHOD="POST")
+          input(type="hidden" name="edit" value=product.id)
+          button(type="SUBMIT") 
+            a(href= product.id) I want this phone fixed
+        br

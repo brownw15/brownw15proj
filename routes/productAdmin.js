@@ -26,7 +26,7 @@ router.post('/new', (req,res)=>{
     itemPrc: req.body.itemPrc
   })
   .then(()=>{
-    res.redirect('/admin/adminindex/');
+    res.redirect('/admin/products');
   })
   .catch((err)=>{
     console.log('Error saving product', err)
@@ -35,7 +35,7 @@ router.post('/new', (req,res)=>{
 
 router.get('/:id', (req, res)=>{
   let id = req.params.id;
-  Product.find({ where : {id : id} })
+  Product.findByPk(id)
   .then((product)=> {
     console.log(product);
     res.render('admin/products/productview.pug', {product: product});
@@ -46,7 +46,7 @@ router.get('/edit/:id', (req,res)=>{
   const id = req.params.id;
   Product.findByPk(id)
   .then((product)=>{
-    res.render('admin/products/edit', {product: product});
+    res.render('admin/products/edit.pug', {product: product});
   })
 });
 
@@ -70,7 +70,8 @@ router.post('/edit/:id', (req,res)=>{
     product.itemImg = req.body.itemImg;
     product.itemPrc = req.body.itemPrc;
     product.save().then(()=>{
-      res.render('/admin/products/edit', {product: product});
+      res.redirect('/admin/products');
+      console.log(product.itemImg);
     });
   })
 

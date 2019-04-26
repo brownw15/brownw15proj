@@ -37,15 +37,3 @@ sequelize.sync()
 .catch((err)=>{
   console.log("Could not authenticate:", err);
 });
-/*
-app.get('/about', (req,res)=> {
-    res.render('about', {users:userinfo});
-});
-//console.log("Model", userinfo);
-
-app.get('/products/:id', (req,res)=> {
-  let id=req.params.id;
-  let user= userinfo[id];
-  res.render('products', {users:user});
-});
-*/

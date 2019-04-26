@@ -12,4 +12,14 @@ router.get('/', (req,res)=>{
     })
     .catch((err)=>{console.log('error outputting products, err');});
   });
+
+router.get('/:id', (req, res)=>{
+  let id = req.params.id;
+  Product.findByPk(id)
+  .then((product)=> {
+    console.log(product);
+    res.render('productview', {product: product});
+  })
+  .catch((err)=>{console.log('error outputting products, err');});
+});
 module.exports = router;
