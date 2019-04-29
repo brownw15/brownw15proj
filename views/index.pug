@@ -17,8 +17,8 @@ block content
         li  
           <span class="prices"> $$#{product.itemPrc}
           
-        form(action=product.id METHOD="POST")
+        form(action=product.id METHOD="POST" id="fixit")
           input(type="hidden" name="edit" value=product.id)
           button(type="SUBMIT") 
-            a(href= product.id) I want this phone fixed
+            a(href= product.id) Get it fixed!
         br

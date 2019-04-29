@@ -1,23 +1,26 @@
-const express = require('express');
+var express = require('express');
 const app = express();
+const router = express.Router();
 const path = require('path');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const favicon = require('express-favicon');
 const port = 8000;
 
 const sequelize = require('./utils/sequelize');
 const Product = require('./models/Product');
 
-app.use('/',express.urlencoded({extended:false}));
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/productAdmin');
 
-app.use('/' ,express.static('public'));
 app.set('views', path.join(__dirname, "views"));
 app.set('view engine', 'pug');
 
+app.use('/' ,express.static('public'));
+app.use('/',express.urlencoded({extended : false}));
+app.use(favicon(__dirname + '/public/favicon.png'));
 app.use('/', indexRouter);
 app.use('/admin/products', adminRouter);
-//app.use(bodyParser.urlencoded({ extended : false}));
+
 
 
 sequelize.authenticate()

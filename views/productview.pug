@@ -8,8 +8,12 @@ block content
       li Description: #{product.itemDesc}
       li 
         img(src= "../../" + product.itemImg)
-      li Price: $#{product.itemPrc}
+      li(class="prices") Price: $#{product.itemPrc}
     form(action="" METHOD="POST")
       input(type="hidden" name="home")
       button(type="SUBMIT")   
         a(href="/") Back to list
+      br 
+      br
+      button(type="SUBMIT")  
+        a(id="purchase" href="/") Put in an order for this model

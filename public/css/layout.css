@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito|Rubik');
+h1,h2,h3{font-family: 'Nunito', 'Impact', sans-serif;}
+ul,li,p{font-family: 'Rubik', sans-serif;}
+
 h1 {
   color:darkred;
-  font-size: 3em;
+  font-size: 4em;
 }
 h2 {
-  font-size:2em;
-  color:darkblue;
+  font-size:3em;
+  color:navy;
 }
 a{
   color: darkblue;
   text-decoration: none;
   font-size: 2em;
+  font-family: 'Rubik', 'Times New Roman', sans-serif;
 }
 ul,li{
   list-style: none;
@@ -24,11 +29,12 @@ li{
   font-size:1.5em;
 }
 button{
-  border-color:blue;
+  border-color:black;
   border-radius: 5px;
   border-style: solid;
   background: beige;
 }
+.fixit{justify-content: center; text-align: center;}
 img{
   max-width: 200px;
   max-height: 200px;
@@ -64,3 +70,4 @@ body{
 .itemnames{
   font-size:2em;
 }
+.purchase{float:right;}
