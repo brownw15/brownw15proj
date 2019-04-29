@@ -25,7 +25,7 @@ li{
   font-size: 1.4em;
 }
 .prices{
-  color:darkgreen;
+  color:black;
   font-size:1.5em;
 }
 button{
@@ -33,6 +33,7 @@ button{
   border-radius: 5px;
   border-style: solid;
   background: beige;
+  color: black;
 }
 .fixit{justify-content: center; text-align: center;}
 img{
